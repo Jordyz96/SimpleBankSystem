@@ -29,19 +29,16 @@ namespace SimpleBankSystem
         private void CreateBankUser(object sender, RoutedEventArgs e)
         {
             Person user = new BankUser();
-            System.Diagnostics.Debug.WriteLine(user.ID);
         }
 
         private void CreateAdmin(object sender, RoutedEventArgs e)
         {
             Person userAdmin = new Administrator();
-            System.Diagnostics.Debug.WriteLine(userAdmin.ID);
         }
 
         private void CreateDeveloper(object sender, RoutedEventArgs e)
         {
             Person userDev = new Developer();
-            System.Diagnostics.Debug.WriteLine(userDev.ID);
         }
 
     }

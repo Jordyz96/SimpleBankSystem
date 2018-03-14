@@ -12,6 +12,9 @@ namespace SimpleBankSystem.Model
         {
             id = GenerateID(userType);
             password = "the password which the user has created";
+
+            //Record ID to a Identification Storage class
+            IdentificationStorage.getInstance().RecordID(id);
         }
 
         private string id;
@@ -47,6 +50,7 @@ namespace SimpleBankSystem.Model
             return _fullName;
         }
 
+        //Move GenerateID to a separate class that processes the generation and comparison of previously created IDs.
         protected string GenerateID(char _userType)
         {
             Random random = new Random();

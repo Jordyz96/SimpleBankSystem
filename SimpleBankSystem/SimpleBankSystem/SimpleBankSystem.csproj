@@ -58,6 +58,7 @@
     <Compile Include="Model\Administrator.cs" />
     <Compile Include="Model\BankUser.cs" />
     <Compile Include="Model\Developer.cs" />
+    <Compile Include="Model\IdentificationStorage.cs" />
     <Compile Include="Model\Person.cs" />
     <Compile Include="View\HomePage.xaml.cs">
       <DependentUpon>HomePage.xaml</DependentUpon>
