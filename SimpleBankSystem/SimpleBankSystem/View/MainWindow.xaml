@@ -1,0 +1,14 @@
+﻿<Window x:Class="SimpleBankSystem.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SimpleBankSystem"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525">
+    <Grid>
+        <Button x:Name="btnNewUser" Content="New Bank User" VerticalAlignment="Center" HorizontalAlignment="Center" Width="123" Margin="198,95,197.4,194.4" Height="30" Click="CreateBankUser"/>
+        <Button x:Name="btnNewAdmin" Content="New Admin" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="198,163,197.4,129.4" Width="123" Height="30" Click="CreateAdmin"/>
+        <Button x:Name="btnNewDev" Content="New Developer" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="198,229,197.4,63.4" Width="123" Height="30" Click="CreateDeveloper"/>
+    </Grid>
+</Window>
