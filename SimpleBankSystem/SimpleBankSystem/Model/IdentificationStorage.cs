@@ -8,6 +8,7 @@ namespace SimpleBankSystem.Model
 {
     class IdentificationStorage
     {
+        #region Singleton Pattern
         // Singleton Pattern
         private static IdentificationStorage singletonReference = null;
         private IdentificationStorage()
@@ -24,36 +25,72 @@ namespace SimpleBankSystem.Model
             return singletonReference;
         }
         //End Singleton Implementation
+        #endregion
 
+        #region Dictionary Declaration
         //ID is recorded with the unique number as the key and the user as the value.
         private Dictionary<string, char> idStorage = new Dictionary<string, char>()
         {
 
         };
+        #endregion
 
-        public void RecordID(string _id)
+        public string GenerateID(char _userType)
         {
             string _userIntegerID = "";
-            char _userCharID = ' ';
+            string _id = "";
+            bool _idIsUnique = false;
 
-            IDSplitter(_id, ref _userIntegerID, ref _userCharID);
+            int _firstNumber = 0;
+            int _secondNumber = 0;
+            int _thirdNumber = 0;
+            int _fourthNumber = 0;
 
-            idStorage.Add(_userIntegerID, _userCharID);
+            Random random = new Random();
+
+            do
+            {
+               _firstNumber = random.Next(0, 10);
+               _secondNumber = random.Next(0, 10);
+               _thirdNumber = random.Next(0, 10);
+               _fourthNumber = random.Next(0, 10);
+
+                _userIntegerID = _firstNumber.ToString() + _secondNumber.ToString() +
+                    _thirdNumber.ToString() + _fourthNumber.ToString();
+
+                if (IsIDUnique(_userIntegerID))
+                {
+                    _id = _userType + _firstNumber.ToString() + _secondNumber.ToString() +
+                        _thirdNumber.ToString() + _fourthNumber.ToString();
+
+                    _idIsUnique = true;
+
+                    RecordID(_userIntegerID, _userType);
+
+                    return _id;
+                }
+            } while (_idIsUnique);
+
+            return "";
         }
 
-        private void IDSplitter(string _id, ref string _userIntegerID, ref char _userCharID)
+        private bool IsIDUnique(string _id)
         {
-            int i = 0;
-            foreach(char c in _id)
+            //Logic to compare _id with the dictionary data structure
+            foreach(KeyValuePair<string, char> kvp in idStorage)
             {
-                if (i < 1)
-                    _userCharID = c;
-                else
+                if(kvp.Key.Equals(_id))
                 {
-                    _userIntegerID = _userIntegerID + c;
+                    //ID is NOT unique
+                    return false;
                 }
-                i++;
             }
+            return true;
+        }
+
+        private void RecordID(string _userIntegerID, char _userType)
+        {
+            idStorage.Add(_userIntegerID, _userType);
         }
     }
 }

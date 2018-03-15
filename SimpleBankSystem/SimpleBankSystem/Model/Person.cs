@@ -10,11 +10,8 @@ namespace SimpleBankSystem.Model
     {
         public Person(char userType)
         {
-            id = GenerateID(userType);
+            id = IdentificationStorage.getInstance().GenerateID(userType);
             password = "the password which the user has created";
-
-            //Record ID to a Identification Storage class
-            IdentificationStorage.getInstance().RecordID(id);
         }
 
         private string id;
@@ -48,23 +45,6 @@ namespace SimpleBankSystem.Model
         {
             string _fullName = firstName + " " + lastName;
             return _fullName;
-        }
-
-        //Move GenerateID to a separate class that processes the generation and comparison of previously created IDs.
-        protected string GenerateID(char _userType)
-        {
-            Random random = new Random();
-
-            char _firstCharacter = _userType;
-            int _firstNumber = random.Next(0, 10);
-            int _secondNumber = random.Next(0, 10);
-            int _thirdNumber = random.Next(0, 10);
-            int _fourthNumber = random.Next(0, 10);
-
-            string _id = _firstCharacter + _firstNumber.ToString() + _secondNumber.ToString() + 
-                _thirdNumber.ToString() + _fourthNumber.ToString();
-
-            return _id;
         }
     }
 }
