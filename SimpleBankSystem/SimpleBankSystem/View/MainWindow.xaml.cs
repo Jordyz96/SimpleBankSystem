@@ -41,5 +41,10 @@ namespace SimpleBankSystem
             Person userDev = new Developer();
         }
 
+        private void ViewIDStorage(object sender, RoutedEventArgs e)
+        {
+            IdentificationStorage.getInstance().PrintAllID();
+
+        }
     }
 }

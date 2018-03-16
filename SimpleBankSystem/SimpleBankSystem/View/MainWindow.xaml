@@ -10,5 +10,6 @@
         <Button x:Name="btnNewUser" Content="New Bank User" VerticalAlignment="Center" HorizontalAlignment="Center" Width="123" Margin="198,95,197.4,194.4" Height="30" Click="CreateBankUser"/>
         <Button x:Name="btnNewAdmin" Content="New Admin" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="198,163,197.4,129.4" Width="123" Height="30" Click="CreateAdmin"/>
         <Button x:Name="btnNewDev" Content="New Developer" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="198,229,197.4,63.4" Width="123" Height="30" Click="CreateDeveloper"/>
+        <Button x:Name="btnViewIDStorage" Content="View ID Storage" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="45,187,350.4,105.4" Width="123" Height="30" Click="ViewIDStorage"/>
     </Grid>
 </Window>

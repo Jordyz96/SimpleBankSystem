@@ -94,6 +94,15 @@ namespace SimpleBankSystem.Model
         private void RecordID(string _userIntegerID, char _userType)
         {
             idStorage.Add(_userIntegerID, _userType);
+            //Record these ID's in a database server along with their registered passwords
+        }
+
+        public void PrintAllID()
+        {
+            foreach(KeyValuePair<string, char> kvp in idStorage)
+            {
+                Console.WriteLine(kvp.Value + kvp.Key);
+            }
         }
     }
 }

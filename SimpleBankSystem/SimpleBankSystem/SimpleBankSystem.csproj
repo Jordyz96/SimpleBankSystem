@@ -56,8 +56,10 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Model\Administrator.cs" />
+    <Compile Include="Model\BankAccount.cs" />
     <Compile Include="Model\BankUser.cs" />
     <Compile Include="Model\Developer.cs" />
+    <Compile Include="Model\IBankAccount.cs" />
     <Compile Include="Model\IdentificationStorage.cs" />
     <Compile Include="Model\Person.cs" />
     <Compile Include="View\HomePage.xaml.cs">
