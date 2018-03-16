@@ -8,6 +8,18 @@ namespace SimpleBankSystem.Model
 {
     class IdentificationStorage
     {
+        #region Variable Declarations
+        private string userIntegerID = "";
+        private string id = "";
+        private bool idIsUnique = false;
+
+        int firstNumber = 0;
+        int secondNumber = 0;
+        int thirdNumber = 0;
+        int fourthNumber = 0;
+
+        #endregion
+
         #region Singleton Pattern
         // Singleton Pattern
         private static IdentificationStorage singletonReference = null;
@@ -37,39 +49,30 @@ namespace SimpleBankSystem.Model
 
         public string GenerateID(char _userType)
         {
-            string _userIntegerID = "";
-            string _id = "";
-            bool _idIsUnique = false;
-
-            int _firstNumber = 0;
-            int _secondNumber = 0;
-            int _thirdNumber = 0;
-            int _fourthNumber = 0;
-
             Random random = new Random();
 
             do
             {
-               _firstNumber = random.Next(0, 10);
-               _secondNumber = random.Next(0, 10);
-               _thirdNumber = random.Next(0, 10);
-               _fourthNumber = random.Next(0, 10);
+               firstNumber = random.Next(0, 10);
+               secondNumber = random.Next(0, 10);
+               thirdNumber = random.Next(0, 10);
+               fourthNumber = random.Next(0, 10);
 
-                _userIntegerID = _firstNumber.ToString() + _secondNumber.ToString() +
-                    _thirdNumber.ToString() + _fourthNumber.ToString();
+                userIntegerID = firstNumber.ToString() + secondNumber.ToString() +
+                    thirdNumber.ToString() + fourthNumber.ToString();
 
-                if (IsIDUnique(_userIntegerID))
+                if (IsIDUnique(userIntegerID))
                 {
-                    _id = _userType + _firstNumber.ToString() + _secondNumber.ToString() +
-                        _thirdNumber.ToString() + _fourthNumber.ToString();
+                    id = _userType + firstNumber.ToString() + secondNumber.ToString() +
+                        thirdNumber.ToString() + fourthNumber.ToString();
 
-                    _idIsUnique = true;
+                    idIsUnique = true;
 
-                    RecordID(_userIntegerID, _userType);
+                    RecordID(userIntegerID, _userType);
 
-                    return _id;
+                    return id;
                 }
-            } while (_idIsUnique);
+            } while (idIsUnique);
 
             return "";
         }
