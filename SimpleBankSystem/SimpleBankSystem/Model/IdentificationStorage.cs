@@ -9,15 +9,23 @@ namespace SimpleBankSystem.Model
     class IdentificationStorage
     {
         #region Variable Declarations
-        private string userIntegerID = "";
-        private string id = "";
-        private bool idIsUnique = false;
+        string userIntegerID = "";
+        string id = "";
+        bool idIsUnique = false;
 
         int firstNumber = 0;
         int secondNumber = 0;
         int thirdNumber = 0;
         int fourthNumber = 0;
 
+        #endregion
+
+        #region Dictionary Declaration
+        //ID is recorded with the unique number as the key and the user as the value.
+        private Dictionary<string, char> idStorage = new Dictionary<string, char>()
+        {
+
+        };
         #endregion
 
         #region Singleton Pattern
@@ -39,14 +47,7 @@ namespace SimpleBankSystem.Model
         //End Singleton Implementation
         #endregion
 
-        #region Dictionary Declaration
-        //ID is recorded with the unique number as the key and the user as the value.
-        private Dictionary<string, char> idStorage = new Dictionary<string, char>()
-        {
-
-        };
-        #endregion
-
+        #region Public Methods
         public string GenerateID(char _userType)
         {
             Random random = new Random();
@@ -77,6 +78,17 @@ namespace SimpleBankSystem.Model
             return "";
         }
 
+        public void PrintAllID()
+        {
+            foreach (KeyValuePair<string, char> kvp in idStorage)
+            {
+                Console.WriteLine(kvp.Value + kvp.Key);
+            }
+        }
+
+        #endregion
+
+        #region Private Methods
         private bool IsIDUnique(string _id)
         {
             //Logic to compare _id with the dictionary data structure
@@ -96,13 +108,6 @@ namespace SimpleBankSystem.Model
             idStorage.Add(_userIntegerID, _userType);
             //Record these ID's in a database server along with their registered passwords
         }
-
-        public void PrintAllID()
-        {
-            foreach(KeyValuePair<string, char> kvp in idStorage)
-            {
-                Console.WriteLine(kvp.Value + kvp.Key);
-            }
-        }
+        #endregion
     }
 }

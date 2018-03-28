@@ -5,11 +5,30 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SimpleBankSystem"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="MainWindow" Height="350" Width="763.2">
     <Grid>
-        <Button x:Name="btnNewUser" Content="New Bank User" VerticalAlignment="Center" HorizontalAlignment="Center" Width="123" Margin="198,95,197.4,194.4" Height="30" Click="CreateBankUser"/>
-        <Button x:Name="btnNewAdmin" Content="New Admin" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="198,163,197.4,129.4" Width="123" Height="30" Click="CreateAdmin"/>
-        <Button x:Name="btnNewDev" Content="New Developer" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="198,229,197.4,63.4" Width="123" Height="30" Click="CreateDeveloper"/>
-        <Button x:Name="btnViewIDStorage" Content="View ID Storage" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="45,187,350.4,105.4" Width="123" Height="30" Click="ViewIDStorage"/>
+        <Button x:Name="btnNewUser" Content="New Bank User" VerticalAlignment="Center" HorizontalAlignment="Center" Width="123" Margin="595,96,38.8,196.4" Height="30" Click="CreateBankUser"/>
+        <Button x:Name="btnNewAdmin" Content="New Admin" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="605,150,28.8,142.4" Width="123" Height="30" Click="CreateAdmin"/>
+        <Button x:Name="btnNewDev" Content="New Developer" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="595,215,38.8,77.4" Width="123" Height="30" Click="CreateDeveloper"/>
+        <Button x:Name="btnViewIDStorage" Content="View ID Storage" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="605,33,28.8,259.4" Width="123" Height="30" Click="ViewIDStorage"/>
+        <Label x:Name="label" Content="Simple Bank System" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top" FontSize="26.667" FontWeight="Bold"/>
+        <Label x:Name="lblRegister" Content="Register" HorizontalAlignment="Left" Margin="20,70,0,0" VerticalAlignment="Top" FontSize="20"/>
+        <Label x:Name="lblLogin" Content="Login" HorizontalAlignment="Left" Margin="383,70,0,0" VerticalAlignment="Top" FontSize="20"/>
+        <Label x:Name="lblNewUser" Content="New Username: " HorizontalAlignment="Left" Margin="20,116,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblNewPassword" Content="New Password:" HorizontalAlignment="Left" Margin="20,146,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblReenterPassword" Content="Re-enter Password:" HorizontalAlignment="Left" Margin="20,176,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblUsername" Content="Username:" HorizontalAlignment="Left" Margin="377,125,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblPassword" Content="Password: &#xD;&#xA;" HorizontalAlignment="Left" Margin="377,154,0,0" VerticalAlignment="Top" Height="26"/>
+        <Button x:Name="btnRegister" Content="REGISTER!" HorizontalAlignment="Left" Margin="22,264,0,0" VerticalAlignment="Top" Width="110" Height="27" Click="btnRegister_Click"/>
+        <TextBox x:Name="tbUsernameRegister" HorizontalAlignment="Left" Height="23" Margin="132,119,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="tbPasswordRegister" HorizontalAlignment="Left" Height="23" Margin="132,150,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="tbReenterPassword" HorizontalAlignment="Left" Height="23" Margin="132,179,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="tbUsernameLogin" HorizontalAlignment="Left" Height="23" Margin="448,128,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="tbPasswordLogin" HorizontalAlignment="Left" Height="23" Margin="448,157,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="btnLogin" Content="LOGIN!" HorizontalAlignment="Left" Margin="363,215,0,0" VerticalAlignment="Top" Width="110" Height="27" Click="btnLogin_Click"/>
+        <Label x:Name="lblFirstName" Content="First Name:" HorizontalAlignment="Left" Margin="20,202,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblLastName" Content="Last Name:" HorizontalAlignment="Left" Margin="20,232,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="tbFirstName" HorizontalAlignment="Left" Height="23" Margin="132,207,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="tbLastName" HorizontalAlignment="Left" Height="23" Margin="132,236,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
     </Grid>
 </Window>

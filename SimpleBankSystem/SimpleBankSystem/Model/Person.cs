@@ -15,9 +15,16 @@ namespace SimpleBankSystem.Model
         }
 
         private string id;
+        private string userName;
         private string password;
         private string firstName;
         private string lastName;
+
+        public string UserName
+        {
+            get { return userName; }
+            set { userName = value; }
+        }
 
         public string FirstName
         {
